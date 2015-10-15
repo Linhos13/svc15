@@ -3,6 +3,10 @@
 
 typedef unsigned int size_t;
 typedef unsigned long uintptr_t;
+/*copetition*/
+typedef unsigned long long loff_t;
+typedef unsigned long int pthread_t;
+typedef unsigned long sector_t;
 
 void klee_make_symbolic(void *addr, size_t nbytes, const char *name);
 void klee_assume(uintptr_t condition);
@@ -135,3 +139,41 @@ void *kzalloc(int size, int gfp)
 	extern void *malloc(size_t size);
 	return malloc(size);
 }
+
+/* competition */
+
+size_t __VERIFIER_nondet_size_t()
+{
+    return __VERIFIER_nondet_uint();
+} 
+
+/* unsigned long long - 64bit */
+loff_t  __VERIFIER_nondet_loff_t()
+{
+    //TODO
+}
+
+/* unsigned long */
+pthread_t __VERIFIER_nondet_pthread_t()
+{
+    __VERIFIER_nondet_ulong();
+}
+
+/* unsigned long */
+sector_t __VERIFIER_nondet_sector_t()
+{
+    __VERIFIER_nondet_ulong();
+}
+
+/* atomic execution */
+void __VERIFIER_atomic_begin()
+{
+    //TODO
+}
+
+void __VERIFIER_atomic_end()
+{
+    //TODO
+}
+
+
